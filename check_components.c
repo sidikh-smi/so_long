@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 22:02:07 by skhaliff          #+#    #+#             */
-/*   Updated: 2022/07/24 15:17:00 by skhaliff         ###   ########.fr       */
+/*   Updated: 2022/07/26 10:50:15 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	init_component(t_component *p, t_vars *d)
 	p->nmbr_collectibles = 0;
 	p->nmbr_exit = 0;
 	p->nmbr_p = 0;
-	d->nbln = 0;
-	while (d->map[d->nbln])
-		d->nbln++;
+	p->size = 0;
+	while (d->map[p->size])
+		p->size++;
 }
 
 void	check_component(t_vars *d)
@@ -46,7 +46,7 @@ void	check_component(t_vars *d)
 	while (i < ft_strlen(d->map[0]))
 	{
 		if (d->map[0][i] != '1' ||
-			d->map[d->nbln - 1][i] != '1')
+			d->map[p.size - 1][i] != '1')
 				p.wall = 0;
 		j = 0;
 		while (d->map[j])

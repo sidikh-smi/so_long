@@ -1,41 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 14:33:27 by skhaliff          #+#    #+#             */
-/*   Updated: 2022/07/30 15:22:23 by skhaliff         ###   ########.fr       */
+/*   Created: 2021/12/01 17:53:44 by skhaliff          #+#    #+#             */
+/*   Updated: 2022/07/31 11:13:35 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"so_long.h"
 
-char	*ft_strjoin(char *s1, char *s2)
+int	put_print(va_list arg, const char s)
 {
-	char	*str;
-	size_t	i;
-	size_t	j;
+	int	len_frm;
 
-	if (!s1)
-		return (ft_strdup(s2));
+	len_frm = 0;
+	if (s == 'd')
+		len_frm += ft_putnbr(va_arg(arg, int));
+	return (len_frm);
+}
+
+int	ft_printf(char *format, ...)
+{
+	int		len_frm;
+	va_list	arg;
+	int		i;
+
 	i = 0;
-	str = malloc(sizeof(char) * (ft_strlen(s2) + ft_strlen(s1) + 1));
-	if (!str)
-		return (NULL);
-	while (s1[i])
+	len_frm = 0;
+	va_start(arg, format);
+	while (format[i])
 	{
-		str[i] = s1[i];
+		if (format[i] == '%')
+		{
+			len_frm = len_frm + put_print(arg, format[i + 1]);
+			i++;
+		}
+		else
+			len_frm += ft_putchar(format[i]);
 		i++;
 	}
-	j = 0;
-	while (s2[j])
-	{
-		str[i + j] = s2[j];
-		j++;
-	}
-	str[i + j] = '\0';
-	free(s1);
-	return (str);
+	va_end(arg);
+	return (len_frm);
 }

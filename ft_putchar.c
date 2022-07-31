@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/19 00:40:45 by skhaliff          #+#    #+#             */
-/*   Updated: 2022/07/29 15:27:02 by skhaliff         ###   ########.fr       */
+/*   Created: 2021/12/02 17:07:40 by skhaliff          #+#    #+#             */
+/*   Updated: 2022/07/30 14:06:06 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include"so_long.h"
 
-void	error(char *s)
+int	ft_putchar(const char c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		write(2, &s[i++], 1);
-	}
-	exit(0);
+	write(1, &c, 1);
+	return (1);
 }

@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   counter.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/19 00:40:45 by skhaliff          #+#    #+#             */
-/*   Updated: 2022/07/29 15:27:02 by skhaliff         ###   ########.fr       */
+/*   Created: 2022/07/31 10:51:55 by skhaliff          #+#    #+#             */
+/*   Updated: 2022/07/31 12:32:35 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	error(char *s)
+void	counter(t_vars *d)
 {
-	int	i;
+	char	*s;
+	char	*str;
 
-	i = 0;
-	while (s[i])
-	{
-		write(2, &s[i++], 1);
-	}
-	exit(0);
+	s = ft_itoa(d->pas);
+	ft_printf(s);
+	write(1, "\n", 1);
+	free(s);
 }
