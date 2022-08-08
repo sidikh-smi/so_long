@@ -6,13 +6,13 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 21:29:30 by skhaliff          #+#    #+#             */
-/*   Updated: 2022/07/30 19:16:12 by skhaliff         ###   ########.fr       */
+/*   Updated: 2022/08/06 12:32:31 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"so_long.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_strlen(const char *s)
 {
 	int	i;
 
@@ -45,8 +45,8 @@ char	*ft_strchr(char *s, int c)
 char	*ft_strdup(char *s1)
 {
 	char	*copy;
-	size_t	len;
-	size_t	i;
+	int		len;
+	int		i;
 
 	i = 0;
 	len = ft_strlen(s1);

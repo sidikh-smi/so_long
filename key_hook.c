@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 12:18:04 by skhaliff          #+#    #+#             */
-/*   Updated: 2022/07/31 14:25:34 by skhaliff         ###   ########.fr       */
+/*   Updated: 2022/08/04 14:08:27 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	draw_d(t_vars *d)
 	{
 		d->pas++;
 		counter(d);
+		mlx_put_image_to_window(d->mlx, d->win, d->bg,
+			(d->position.x + 1) * 46, d->position.y * 46);
 		mlx_put_image_to_window(d->mlx, d->win, d->player,
 			(d->position.x + 1) * 46, d->position.y * 46);
 		mlx_put_image_to_window(d->mlx, d->win, d->bg,
@@ -32,6 +34,8 @@ void	draw_d(t_vars *d)
 	else if (d->map[d->position.y][d->position.x + 1] == 'E'
 		&& d->collectibles == 0)
 	{
+		d->pas++;
+		counter(d);
 		exit(0);
 	}
 }
@@ -43,6 +47,8 @@ void	draw_a(t_vars *d)
 	{
 		d->pas++;
 		counter(d);
+		mlx_put_image_to_window(d->mlx, d->win, d->bg,
+			(d->position.x - 1) * 46, d->position.y * 46);
 		mlx_put_image_to_window(d->mlx, d->win, d->player,
 			(d->position.x - 1) * 46, d->position.y * 46);
 		mlx_put_image_to_window(d->mlx, d->win, d->bg,
@@ -56,6 +62,8 @@ void	draw_a(t_vars *d)
 	else if (d->map[d->position.y][d->position.x - 1] == 'E'
 		&& d->collectibles == 0)
 	{
+		d->pas++;
+		counter(d);
 		exit(0);
 	}
 }
@@ -67,6 +75,8 @@ void	draw_s(t_vars *d)
 	{
 		d->pas++;
 		counter(d);
+		mlx_put_image_to_window(d->mlx, d->win, d->bg,
+			d->position.x * 46, (d->position.y + 1) * 46);
 		mlx_put_image_to_window(d->mlx, d->win, d->player,
 			d->position.x * 46, (d->position.y + 1) * 46);
 		mlx_put_image_to_window(d->mlx, d->win, d->bg,
@@ -80,6 +90,8 @@ void	draw_s(t_vars *d)
 	else if (d->map[d->position.y + 1][d->position.x] == 'E'
 		&& d->collectibles == 0)
 	{
+		d->pas++;
+		counter(d);
 		exit(0);
 	}
 }
@@ -91,6 +103,8 @@ void	draw_w(t_vars *d)
 	{
 		d->pas++;
 		counter(d);
+		mlx_put_image_to_window(d->mlx, d->win, d->bg,
+			d->position.x * 46, (d->position.y - 1) * 46);
 		mlx_put_image_to_window(d->mlx, d->win, d->player,
 			d->position.x * 46, (d->position.y - 1) * 46);
 		mlx_put_image_to_window(d->mlx, d->win, d->bg,
@@ -104,6 +118,8 @@ void	draw_w(t_vars *d)
 	else if (d->map[d->position.y - 1][d->position.x] == 'E'
 		&& d->collectibles == 0)
 	{
+		d->pas++;
+		counter(d);
 		exit(0);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 11:04:05 by skhaliff          #+#    #+#             */
-/*   Updated: 2022/07/23 14:45:19 by skhaliff         ###   ########.fr       */
+/*   Updated: 2022/08/04 14:19:02 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,18 +62,6 @@ static void	filling_tab_str_i(char *tab, char const *s, int j, int temp)
 	tab[t] = 0;
 }
 
-static char	**free_tab(char **tab_str, int i)
-{
-	while (i != -1)
-	{
-		if (!(tab_str[i]))
-			free(tab_str[i]);
-			i--;
-	}
-	free(tab_str);
-	return (NULL);
-}
-
 char	**ft_split(char *s, char c)
 {
 	int		i;
@@ -94,8 +82,6 @@ char	**ft_split(char *s, char c)
 		{
 			temp = j;
 			tab_str[i] = malloc(sizeof(char) * (nbr_of_char(&j, s, c) + 1));
-			if (!(tab_str[i]))
-				return (free_tab(tab_str, i));
 			filling_tab_str_i(tab_str[i++], s, j, temp);
 		}
 		j++;

@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 00:15:13 by skhaliff          #+#    #+#             */
-/*   Updated: 2022/07/31 09:07:04 by skhaliff         ###   ########.fr       */
+/*   Updated: 2022/08/06 14:43:40 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,18 @@ void	empty_map(char *s, t_vars *d)
 		free(d->map);
 		error("empty map!!");
 	}
+}
+
+int	ft_size(char *e)
+{
+	int	i;
+
+	i = 0;
+	while (e[i])
+	{
+		i++;
+	}
+	return (i);
 }
 
 void	components(char *h)
@@ -47,18 +59,16 @@ void	check(t_vars *s, int fd)
 	empty_map(h, s);
 	while (h)
 	{
+		if (h[0] == '\n' || h[0] == '\0')
+			error("empty line!!!");
 		components(h);
 		e = ft_strjoin(e, h);
 		free (h);
 		h = get_next_line(fd);
 	}
-	i = 0;
-	while (e[i])
-	{
-		if (e[i] == '\n' && e[i + 1] == '\n')
-			error("empty line");
-		i++;
-	}
+	i = ft_size(e);
+	if (e[i - 1] == '\n')
+		error("empty line");
 	s->map = ft_split(e, '\n');
 	free(e);
 	close(fd);

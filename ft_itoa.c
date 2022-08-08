@@ -6,13 +6,13 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 14:03:26 by skhaliff          #+#    #+#             */
-/*   Updated: 2022/07/31 12:26:40 by skhaliff         ###   ########.fr       */
+/*   Updated: 2022/08/03 11:21:49 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-size_t	size_of_n(int n)
+int	size_of_n(int n)
 {
 	int		i;
 	long	num;

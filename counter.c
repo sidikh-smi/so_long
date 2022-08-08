@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 10:51:55 by skhaliff          #+#    #+#             */
-/*   Updated: 2022/07/31 12:32:35 by skhaliff         ###   ########.fr       */
+/*   Updated: 2022/08/04 14:04:52 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	counter(t_vars *d)
 {
 	char	*s;
-	char	*str;
 
 	s = ft_itoa(d->pas);
 	ft_printf(s);

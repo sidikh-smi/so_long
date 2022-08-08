@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 20:27:10 by skhaliff          #+#    #+#             */
-/*   Updated: 2022/07/31 14:25:53 by skhaliff         ###   ########.fr       */
+/*   Updated: 2022/08/06 12:32:15 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,14 +66,14 @@ void	check(t_vars *s, int fd);
 void	check_component(t_vars *d);
 void	det_error(char *s, t_vars *d);
 void	error(char *s);
-char	*ft_strjoin(char *s1, char *s2);
-size_t	ft_strlen(const char *s);
-void	*ft_calloc(size_t count, size_t size);
+char	*ft_strjoin(char *s1, char *s2);	
+int		ft_strlen(const char *s);
+void	*ft_calloc(int count, int size);
 char	*ft_strchr(char *s, int c);
-void	ft_bzero(void *s, size_t n);
+void	ft_bzero(void *s, int n);
 char	**ft_split(char *s, char c);
 char	*ft_strdup(char *s1);
-size_t	ft_strlcpy(char *dst, char *src, size_t dstsize);
+int		ft_strlcpy(char *dst, char *src, int dstsize);
 int		ft_strcmp(const char *s1, const char *s2);
 int		key_hook(int keycode, t_vars *d);
 void	init_map(t_vars *d);

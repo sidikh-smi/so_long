@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 14:33:27 by skhaliff          #+#    #+#             */
-/*   Updated: 2022/07/30 15:22:23 by skhaliff         ###   ########.fr       */
+/*   Updated: 2022/08/06 12:32:06 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*str;
-	size_t	i;
-	size_t	j;
+	int		i;
+	int		j;
 
 	if (!s1)
 		return (ft_strdup(s2));

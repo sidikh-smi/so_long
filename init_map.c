@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 14:51:52 by skhaliff          #+#    #+#             */
-/*   Updated: 2022/07/31 12:31:10 by skhaliff         ###   ########.fr       */
+/*   Updated: 2022/08/06 14:59:11 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	init_size(t_vars *d)
 	d->map_height = i * 46;
 }
 
-int	close_win(t_vars *d)
+int	close_win(void)
 {
 	exit(0);
 	return (0);
@@ -61,6 +61,8 @@ void	init_image(t_vars *d)
 			&d->map_width, &d->map_height);
 	d->bg = mlx_xpm_file_to_image(d->mlx, "images/bg.xpm",
 			&d->map_width, &d->map_height);
+	if (!d->bg || !d->col || !d->exit || !d->player || !d->wall)
+		error("XPM DAMAGE!!!");
 }
 
 void	init_map(t_vars *d)

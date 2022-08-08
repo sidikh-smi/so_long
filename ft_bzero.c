@@ -6,15 +6,15 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 19:10:38 by skhaliff          #+#    #+#             */
-/*   Updated: 2022/07/21 01:00:21 by skhaliff         ###   ########.fr       */
+/*   Updated: 2022/08/03 11:21:49 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"so_long.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, int n)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (i < n)

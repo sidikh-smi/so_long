@@ -6,7 +6,7 @@
 /*   By: skhaliff <skhaliff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 21:13:15 by skhaliff          #+#    #+#             */
-/*   Updated: 2022/07/30 18:28:19 by skhaliff         ###   ########.fr       */
+/*   Updated: 2022/08/06 12:32:26 by skhaliff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*new_line(char *str)
 char	*read_file(int fd, char *str)
 {
 	char	*buffer;
-	ssize_t	read_bt;
+	int		read_bt;
 
 	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buffer)
